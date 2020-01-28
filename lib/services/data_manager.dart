@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_demo_app/values/strings.dart';
+import 'package:package_info/package_info.dart';
 
 import 'api_service.dart';
 import 'package:dio/dio.dart' as dio;
@@ -35,4 +36,11 @@ class DataManager {
   Future<Response> getEmployee() async {
     return apiService.getEmployees();
   }
+
+  Future<String> getAppVersion() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    return packageInfo.version;
+  }
+
+
 }

@@ -14,10 +14,8 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   int _counter = 0;
 
-  void _incrementCounter() {
+   _incrementCounter() {
     setState(() {
-      AppTranslations.load(Locale('ja', ''));
-
       _counter++;
     });
   }
@@ -26,7 +24,6 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: Text(widget.title),
       ),
       body: Center(

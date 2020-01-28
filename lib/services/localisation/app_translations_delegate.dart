@@ -17,7 +17,6 @@ class AppTranslationsDelegate extends LocalizationsDelegate<AppTranslations> {
 
   @override
   Future<AppTranslations> load(Locale locale) {
-    print("localeee"+locale.languageCode.toString());
     return AppTranslations.load(newLocale ?? locale);
   }
 
