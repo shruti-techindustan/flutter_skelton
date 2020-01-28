@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_app/services/data_manager.dart';
 import 'package:flutter_demo_app/services/localisation/app_translations.dart';
 
 class Login extends StatefulWidget {
@@ -16,7 +17,7 @@ class _LoginState extends State<Login> {
   void _incrementCounter() {
     setState(() {
       AppTranslations.load(Locale('ja', ''));
-      // const AppTranslationsDelegate(newLocale: Locale("en"));
+
       _counter++;
     });
   }

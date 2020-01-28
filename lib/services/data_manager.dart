@@ -32,7 +32,7 @@ class DataManager {
     saveUserName(userName);
   }
 
-  Future<Response> login() async {
-    return apiService.phoneAuth();
+  Future<Response> getEmployee() async {
+    return apiService.getEmployees();
   }
 }

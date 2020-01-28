@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:async/async.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_demo_app/services/ui/custom_interceptors.dart';
 
 import 'package:intl/intl.dart';
 
@@ -27,11 +28,13 @@ class ApiService {
         BaseUrl = "https://api.domainname";
         break;
     }
+
+     dio.interceptors.add(CustomInterceptors());
+    //dio.interceptors.add(LogInterceptor(responseBody: true,requestHeader: true,request: true));
   }
 
-  Future<Response> phoneAuth() async {
-    var url = BaseUrl + "api/auth/authentication";
-    return await dio.post(url, options: Options(contentType: 'application/x-www-form-urlencoded'));
+  Future<Response> getEmployees() async {
+    return await dio.get("http://dummy.restapiexample.com/api/v1/employees");
   }
 }
 
